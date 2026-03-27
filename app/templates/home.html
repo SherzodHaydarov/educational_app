@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="p-4 p-md-5 mb-4 rounded-3 bg-light border">
+  <div class="container-fluid py-2">
+    <h1 class="display-6 fw-bold">{{ center_name }}</h1>
+    <p class="lead mb-0">Manage students, courses, teachers, and payments in one place.</p>
+  </div>
+</div>
+
+<div class="row g-4">
+  <div class="col-md-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">Quick Access</h5>
+        <p class="card-text">Use the management pages to perform CRUD operations via REST APIs.</p>
+        <div class="d-flex gap-2 flex-wrap">
+          <a href="/students" class="btn btn-outline-primary">Students</a>
+          <a href="/courses" class="btn btn-outline-primary">Courses</a>
+          <a href="/payments" class="btn btn-outline-primary">Payments</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">Center Location</h5>
+        <p class="card-text mb-2">{{ center_address }}</p>
+        <div class="ratio ratio-4x3">
+          <iframe
+            src="{{ map_embed_url }}"
+            style="border:0"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Center Map"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

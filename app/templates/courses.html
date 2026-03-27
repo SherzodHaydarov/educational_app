@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-3">Course Management</h2>
+<div class="row g-4">
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Add / Edit Course</h5>
+        <form id="course-form" class="vstack gap-2">
+          <input type="hidden" id="course-id" />
+          <input class="form-control" id="course-title" placeholder="Title" required />
+          <textarea class="form-control" id="course-description" placeholder="Description"></textarea>
+          <input class="form-control" id="course-price" type="number" min="1" step="0.01" placeholder="Price" required />
+          <input class="form-control" id="course-duration" type="number" min="1" placeholder="Duration (weeks)" required />
+          <div class="d-flex gap-2">
+            <button class="btn btn-primary" type="submit">Save Course</button>
+            <button class="btn btn-secondary" id="course-reset" type="button">Clear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Courses</h5>
+        <div class="table-responsive">
+          <table class="table table-striped" id="courses-table">
+            <thead><tr><th>Title</th><th>Price</th><th>Duration</th><th>Actions</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="courses-alert" class="mt-3"></div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/courses.js"></script>
+{% endblock %}
