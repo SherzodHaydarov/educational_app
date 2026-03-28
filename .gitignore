@@ -4,9 +4,11 @@ __pycache__/
 *$py.class
 .pytest_cache/
 .mypy_cache/
+educational_center.db
 
 # Virtual muhit (Virtual Environments) - ENG MUHIMI
 .venv/
+.env
 venv/
 ENV/
 env/
