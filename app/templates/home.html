@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="hero-section">
+  <h1>{{ center_name }}</h1>
+  <p>Talabalar, kurslar, o'qituvchilar va to'lovlarni bir joyda boshqaring.</p>
+  <div class="d-flex gap-2 flex-wrap mt-4">
+    <a href="/students" class="quick-btn">👤 Students</a>
+    <a href="/courses" class="quick-btn">📚 Courses</a>
+    <a href="/payments" class="quick-btn">💳 Payments</a>
+  </div>
+</div>
+
+<div class="row g-3">
+  <div class="col-md-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <p class="section-label">Quick Access</p>
+        <h5 class="card-title">Boshqaruv paneli</h5>
+        <p style="color: var(--text-secondary); font-size: 13.5px; line-height: 1.7;">
+          Talabalarni ro'yxatga olish, kurslarni boshqarish va to'lovlarni kuzatish.
+        </p>
+        <div class="d-flex gap-2 flex-wrap mt-3">
+          <a href="/students" class="btn btn-outline-primary btn-sm">Students →</a>
+          <a href="/courses" class="btn btn-outline-primary btn-sm">Courses →</a>
+          <a href="/payments" class="btn btn-outline-primary btn-sm">Payments →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <p class="section-label">Manzil</p>
+        <h5 class="card-title">{{ center_address }}</h5>
+        <div class="map-wrapper mt-3">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3032.4990934602715!2d65.7963802906487!3d38.84964833098428!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4ea63944a8e4c1%3A0x694369ac2037509d!2sQarshi%2C%20Qashqadaryo%20Viloyati%2C%20O%CA%BBzbekiston!5e1!3m2!1suz!2sus!4v1774641452474!5m2!1suz!2sus"
+            width="100%"
+            height="220"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Center Map"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

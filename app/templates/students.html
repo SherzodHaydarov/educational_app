@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header">
+  <h2>Student Management</h2>
+  <p>Talabalar va o'qituvchilarni qo'shish, tahrirlash va boshqarish.</p>
+</div>
+
+<!-- STUDENTS -->
+<div class="row g-3 mb-5">
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-body">
+        <p class="section-label">Talaba</p>
+        <h5 class="card-title">Qo'shish / Tahrirlash</h5>
+        <form id="student-form" class="vstack gap-2">
+          <input type="hidden" id="student-id" />
+          <input class="form-control" id="student-first-name" placeholder="Ism" required />
+          <input class="form-control" id="student-last-name" placeholder="Familiya" required />
+          <input class="form-control" id="student-email" type="email" placeholder="Email" required />
+          <input class="form-control" id="student-phone" placeholder="Telefon" required />
+          <div class="d-flex gap-2 mt-1">
+            <button class="btn btn-primary flex-grow-1" type="submit">Saqlash</button>
+            <button class="btn btn-secondary" id="student-reset" type="button">Tozalash</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-8">
+    <div class="card">
+      <div class="card-body">
+        <p class="section-label">Ro'yxat</p>
+        <h5 class="card-title">Talabalar</h5>
+        <div class="table-responsive">
+          <table class="table" id="students-table">
+            <thead>
+              <tr>
+                <th>Ism Familiya</th>
+                <th>Email</th>
+                <th>Telefon</th>
+                <th>Amallar</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TEACHERS -->
+<div class="page-header">
+  <h2>Teacher Management</h2>
+  <p>O'qituvchilarni boshqarish.</p>
+</div>
+
+<div class="row g-3">
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-body">
+        <p class="section-label">O'qituvchi</p>
+        <h5 class="card-title">Qo'shish / Tahrirlash</h5>
+        <form id="teacher-form" class="vstack gap-2">
+          <input type="hidden" id="teacher-id" />
+          <input class="form-control" id="teacher-first-name" placeholder="Ism" required />
+          <input class="form-control" id="teacher-last-name" placeholder="Familiya" required />
+          <input class="form-control" id="teacher-email" type="email" placeholder="Email" required />
+          <input class="form-control" id="teacher-specialization" placeholder="Mutaxassislik" required />
+          <div class="d-flex gap-2 mt-1">
+            <button class="btn btn-primary flex-grow-1" type="submit">Saqlash</button>
+            <button class="btn btn-secondary" id="teacher-reset" type="button">Tozalash</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-8">
+    <div class="card">
+      <div class="card-body">
+        <p class="section-label">Ro'yxat</p>
+        <h5 class="card-title">O'qituvchilar</h5>
+        <div class="table-responsive">
+          <table class="table" id="teachers-table">
+            <thead>
+              <tr>
+                <th>Ism Familiya</th>
+                <th>Email</th>
+                <th>Mutaxassislik</th>
+                <th>Amallar</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="students-alert" class="mt-3"></div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/students.js"></script>
+{% endblock %}
